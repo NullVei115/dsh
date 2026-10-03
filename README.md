@@ -45,6 +45,22 @@ git push
 
 首次推送后 `origin/main` 已建立跟踪关系，之后直接 `git push` / `git pull` 即可，无需再带参数。
 
+## SSH 通道说明
+
+`~/.ssh/config` 里配置了两条通道，**默认走 443**（穿透性最好）：
+
+| 别名 | 实际地址 | 用途 |
+|---|---|---|
+| `github.com` | `ssh.github.com:443` | **默认**，端口 443，不易被网络阻断 |
+| `github.com-22` | `github.com:22` | 备用，标准端口 |
+
+实测 Windows OpenSSH 9.5p2 **不会**在多级 `Host` 之间自动回退，所以默认通道直接指向 443，而不是指望自动切换。若某天 443 不可用，把 remote 换成别名即可：
+
+```powershell
+git remote set-url origin git@github.com-22:NullVei115/dsh.git   # 切到 22
+git remote set-url origin git@github.com:NullVei115/dsh.git      # 切回 443
+```
+
 ## 许可
 
 MIT
