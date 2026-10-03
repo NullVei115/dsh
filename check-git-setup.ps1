@@ -1,4 +1,4 @@
-# git 环境自检脚本
+﻿# git 环境自检脚本
 # 逐项报告本机 Git 配置与 GitHub 连通性。
 
 $ErrorActionPreference = 'Continue'
