@@ -29,6 +29,22 @@ pwsh -File .\check-git-setup.ps1
 - **SSH 客户端**：`C:/WINDOWS/System32/OpenSSH/ssh.exe`
 - **备用通道**：`ssh.github.com:443`（当 22 端口不可用时）
 
+## 仓库信息
+
+- **地址**：https://github.com/NullVei115/dsh
+- **SSH 远端**：`git@github.com:NullVei115/dsh.git`
+- **默认分支**：`main`
+
+## 日常使用
+
+```powershell
+git add -A
+git commit -m "说明这次改了什么"
+git push
+```
+
+首次推送后 `origin/main` 已建立跟踪关系，之后直接 `git push` / `git pull` 即可，无需再带参数。
+
 ## 许可
 
 MIT
